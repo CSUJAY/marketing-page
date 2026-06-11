@@ -1,4 +1,5 @@
 import { promises as fs } from "fs";
+import os from "os";
 import path from "path";
 import { randomUUID } from "crypto";
 
@@ -11,22 +12,98 @@ export type BetaRegistration = {
   createdAt: string;
 };
 
-const DATA_DIR = path.join(process.cwd(), "data");
-const REGISTRATIONS_FILE = path.join(DATA_DIR, "beta-registrations.json");
+const KV_KEY = "beta:registrations";
 
-async function ensureStore(): Promise<void> {
-  await fs.mkdir(DATA_DIR, { recursive: true });
+function getRedisCredentials():
+  | { url: string; token: string }
+  | null {
+  const url = process.env.UPSTASH_REDIS_REST_URL ?? process.env.KV_REST_API_URL;
+  const token = process.env.UPSTASH_REDIS_REST_TOKEN ?? process.env.KV_REST_API_TOKEN;
+  if (!url || !token) return null;
+  return { url, token };
+}
+
+function isKvStoreEnabled(): boolean {
+  return getRedisCredentials() !== null;
+}
+
+function getFilePath(): string {
+  if (process.env.BETA_REGISTRATIONS_FILE) {
+    return process.env.BETA_REGISTRATIONS_FILE;
+  }
+
+  if (process.env.VERCEL) {
+    return path.join(os.tmpdir(), "meetingbuddy-beta-registrations.json");
+  }
+
+  return path.join(process.cwd(), "data", "beta-registrations.json");
+}
+
+async function readFromFile(): Promise<BetaRegistration[]> {
+  const filePath = getFilePath();
+
+  if (!process.env.VERCEL) {
+    await fs.mkdir(path.dirname(filePath), { recursive: true });
+  }
+
   try {
-    await fs.access(REGISTRATIONS_FILE);
-  } catch {
-    await fs.writeFile(REGISTRATIONS_FILE, "[]", "utf-8");
+    const raw = await fs.readFile(filePath, "utf-8");
+    return JSON.parse(raw) as BetaRegistration[];
+  } catch (error) {
+    if ((error as NodeJS.ErrnoException).code === "ENOENT") {
+      return [];
+    }
+    throw error;
   }
 }
 
+async function writeToFile(registrations: BetaRegistration[]): Promise<void> {
+  const filePath = getFilePath();
+
+  if (!process.env.VERCEL) {
+    await fs.mkdir(path.dirname(filePath), { recursive: true });
+  }
+
+  await fs.writeFile(filePath, JSON.stringify(registrations, null, 2), "utf-8");
+}
+
+async function getRedisClient() {
+  const credentials = getRedisCredentials();
+  if (!credentials) {
+    throw new Error("Redis credentials are not configured.");
+  }
+
+  const { Redis } = await import("@upstash/redis");
+  return new Redis(credentials);
+}
+
+async function readFromKv(): Promise<BetaRegistration[]> {
+  const redis = await getRedisClient();
+  return (await redis.get<BetaRegistration[]>(KV_KEY)) ?? [];
+}
+
+async function writeToKv(registrations: BetaRegistration[]): Promise<void> {
+  const redis = await getRedisClient();
+  await redis.set(KV_KEY, registrations);
+}
+
+async function readAll(): Promise<BetaRegistration[]> {
+  if (isKvStoreEnabled()) {
+    return readFromKv();
+  }
+  return readFromFile();
+}
+
+async function writeAll(registrations: BetaRegistration[]): Promise<void> {
+  if (isKvStoreEnabled()) {
+    await writeToKv(registrations);
+    return;
+  }
+  await writeToFile(registrations);
+}
+
 export async function getRegistrations(): Promise<BetaRegistration[]> {
-  await ensureStore();
-  const raw = await fs.readFile(REGISTRATIONS_FILE, "utf-8");
-  return JSON.parse(raw) as BetaRegistration[];
+  return readAll();
 }
 
 export async function getRegistrationCount(): Promise<number> {
@@ -37,7 +114,7 @@ export async function getRegistrationCount(): Promise<number> {
 export async function addRegistration(
   data: Omit<BetaRegistration, "id" | "createdAt">
 ): Promise<{ registration: BetaRegistration; count: number }> {
-  const registrations = await getRegistrations();
+  const registrations = await readAll();
   const emailLower = data.email.toLowerCase();
 
   if (registrations.some((r) => r.email.toLowerCase() === emailLower)) {
@@ -51,7 +128,7 @@ export async function addRegistration(
   };
 
   registrations.push(registration);
-  await fs.writeFile(REGISTRATIONS_FILE, JSON.stringify(registrations, null, 2), "utf-8");
+  await writeAll(registrations);
 
   return { registration, count: registrations.length };
 }

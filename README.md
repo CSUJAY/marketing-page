@@ -45,7 +45,19 @@ cp .env.example .env.local
 | Variable | Required | Description |
 |----------|----------|-------------|
 | `BETA_ADMIN_SECRET` | Yes (for admin) | Password for `/admin/beta` |
+| `UPSTASH_REDIS_REST_URL` | **Yes on Vercel** | From Vercel Redis / Upstash (Storage → Connect) |
+| `UPSTASH_REDIS_REST_TOKEN` | **Yes on Vercel** | Auto-added when Redis is connected |
 | `BETA_NOTIFY_WEBHOOK` | No | Webhook URL for signup alerts (Discord, Slack, etc.) |
+
+### Vercel deployment
+
+Vercel's filesystem is read-only, so beta signups **require Redis storage**:
+
+1. In Vercel: **Storage → Create Database → Redis** (Upstash)
+2. Connect it to the `marketing-page` project
+3. Redeploy — `UPSTASH_REDIS_REST_URL` and `UPSTASH_REDIS_REST_TOKEN` are added automatically
+
+Without Redis, the beta form will fail on Vercel.
 
 ### Development
 

@@ -47,6 +47,7 @@ export async function POST(request: Request) {
         { status: 409 }
       );
     }
+    console.error("[beta] POST failed:", error);
     return NextResponse.json({ error: "Failed to submit registration." }, { status: 500 });
   }
 }

@@ -1,0 +1,51 @@
+# dependencies
+/node_modules
+/.pnp
+.pnp.*
+.yarn/*
+!.yarn/patches
+!.yarn/plugins
+!.yarn/releases
+!.yarn/versions
+
+# testing
+/coverage
+
+# next.js
+/.next/
+/out/
+
+# production
+/build
+
+# misc
+.DS_Store
+*.pem
+
+# debug
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+.pnpm-debug.log*
+
+# env files
+.env*
+!.env.example
+
+# beta registration data (contains PII)
+/data/beta-registrations.json
+
+# generated voiceover work files
+/public/.voiceover-work/
+/public/demo-captions.boundaries.jsonl
+/public/demo-voiceover.mp3
+
+# backup copy of original video (main file tracked via Git LFS)
+/public/final-review-video.original.mp4
+
+# source video kept locally (use public/final-review-video.mp4 for deploy)
+/Video Project.mp4
+
+# typescript
+*.tsbuildinfo
+next-env.d.ts

@@ -1,0 +1,339 @@
+WEBVTT
+
+NOTE Generated bot narration captions for MeetingBuddyAI demo video
+
+1
+00:00:00.084 --> 00:00:01.042
+Hello.
+
+2
+00:00:01.000 --> 00:00:04.841
+I am MeetingBuddy AI — your local meeting intelligence assistant.
+
+3
+00:00:04.841 --> 00:00:06.729
+Initialization complete.
+
+4
+00:00:06.729 --> 00:00:08.717
+Beginning guided demonstration.
+
+5
+00:00:08.717 --> 00:00:12.634
+For the next five minutes, I will walk you through every core feature:
+
+6
+00:00:12.634 --> 00:00:16.496
+meeting capture, speech to text, local AI processing,
+
+7
+00:00:16.496 --> 00:00:20.205
+minutes of meeting generation, structured action extraction,
+
+8
+00:00:20.205 --> 00:00:24.594
+chatbot memory, bot follow-up, and enterprise privacy controls.
+
+9
+00:00:24.594 --> 00:00:27.174
+All intelligence runs on your infrastructure.
+
+10
+00:00:27.174 --> 00:00:29.348
+Privacy mode: enabled.
+
+11
+00:00:29.348 --> 00:00:31.675
+Feature one: neural meeting capture.
+
+12
+00:00:31.675 --> 00:00:37.588
+MeetingBuddy AI listens to live meeting audio from conference rooms, video calls, and hybrid sessions.
+
+13
+00:00:37.588 --> 00:00:41.582
+Neural capture processes conversations in real time as they unfold.
+
+14
+00:00:41.582 --> 00:00:43.734
+Audio is retained on your system.
+
+15
+00:00:43.734 --> 00:00:46.610
+No mandatory cloud upload is required.
+
+16
+00:00:46.610 --> 00:00:50.571
+This is the entry point for every automated workflow you are about to see.
+
+17
+00:00:50.571 --> 00:00:53.106
+Feature two: meeting transcription.
+
+18
+00:00:53.106 --> 00:00:57.221
+Captured audio is converted into an accurate, timestamped transcript.
+
+19
+00:00:57.221 --> 00:01:01.084
+Each speaker contribution is labeled, indexed, and searchable.
+
+20
+00:01:01.084 --> 00:01:05.725
+Your team receives a reliable record of what was said, when it was said, and who said it.
+
+21
+00:01:05.725 --> 00:01:09.675
+The transcript becomes structured input for downstream AI analysis.
+
+22
+00:01:09.675 --> 00:01:12.989
+Feature three: local AI transcript processing.
+
+23
+00:01:12.989 --> 00:01:16.874
+MeetingBuddy AI invokes Ollama and Qwen models on your own hardware.
+
+24
+00:01:16.874 --> 00:01:22.524
+The system identifies decisions, themes, and commitments without sending data to external APIs.
+
+25
+00:01:22.524 --> 00:01:27.725
+Processing status, model output, and intermediate reasoning remain inside your environment.
+
+26
+00:01:27.725 --> 00:01:32.903
+For regulated industries, this local-first design is not optional — it is essential.
+
+27
+00:01:32.903 --> 00:01:36.283
+Feature four: automatic minutes of meeting generation.
+
+28
+00:01:36.283 --> 00:01:41.188
+From the analyzed transcript, MeetingBuddy AI composes a professional MoM document.
+
+29
+00:01:41.188 --> 00:01:46.136
+You will see sections for summary, key decisions, discussion points, and attendees.
+
+30
+00:01:46.136 --> 00:01:49.242
+Formatting is consistent and ready for distribution.
+
+31
+00:01:49.242 --> 00:01:52.501
+Manual note-taking time is reduced from hours to minutes.
+
+32
+00:01:52.501 --> 00:01:56.331
+Feature five: five W one H action item extraction.
+
+33
+00:01:56.331 --> 00:02:00.489
+For every commitment detected, the system extracts who owns the task,
+
+34
+00:02:00.489 --> 00:02:03.880
+what must be delivered, when it is due, where it applies,
+
+35
+00:02:03.880 --> 00:02:06.931
+why it matters, and how execution should proceed.
+
+36
+00:02:06.931 --> 00:02:09.270
+Assignee tracking begins immediately.
+
+37
+00:02:09.270 --> 00:02:13.527
+Action items appear in structured tables with status badges for accountability.
+
+38
+00:02:13.527 --> 00:02:15.975
+Feature six: chatbot memory.
+
+39
+00:02:15.975 --> 00:02:20.276
+Project context and meeting history are stored inside the AI assistant itself.
+
+40
+00:02:20.276 --> 00:02:23.996
+There is no separate project dashboard to configure or maintain.
+
+41
+00:02:23.996 --> 00:02:26.751
+Ask questions in natural language at any time.
+
+42
+00:02:26.751 --> 00:02:31.787
+The chatbot recalls prior decisions, outcomes, and discussion threads from earlier meetings.
+
+43
+00:02:31.787 --> 00:02:35.145
+Feature seven: bot follow-up and workflow automation.
+
+44
+00:02:35.145 --> 00:02:39.391
+After the meeting ends, MeetingBuddy AI continues working on your behalf.
+
+45
+00:02:39.391 --> 00:02:43.967
+The bot monitors open action items, assignees, and approaching deadlines.
+
+46
+00:02:43.967 --> 00:02:49.102
+Email workflows distribute meeting summaries and send action requests to responsible parties.
+
+47
+00:02:49.102 --> 00:02:53.830
+Follow-up is proactive — not dependent on someone remembering to check a task list.
+
+48
+00:02:53.830 --> 00:02:56.421
+Feature eight: privacy-first architecture.
+
+49
+00:02:56.421 --> 00:03:00.580
+Local inference, optional connectivity, full data ownership,
+
+50
+00:03:00.580 --> 00:03:04.618
+offline operation, and enterprise controls are active by default.
+
+51
+00:03:04.618 --> 00:03:08.447
+Your sensitive conversations stay under organizational control.
+
+52
+00:03:08.447 --> 00:03:11.202
+Continuing with the on-screen feature walkthrough.
+
+53
+00:03:11.202 --> 00:03:14.834
+On screen, you can see the action item request interface.
+
+54
+00:03:14.834 --> 00:03:19.179
+Create structured requests with title, assignee, and due date fields.
+
+55
+00:03:19.179 --> 00:03:23.832
+Each request links back to the source meeting and transcript segment for full traceability.
+
+56
+00:03:23.832 --> 00:03:27.738
+The assignee tracking view lists every open commitment in one table.
+
+57
+00:03:27.738 --> 00:03:31.984
+Status badges highlight pending, in progress, and completed items.
+
+58
+00:03:31.984 --> 00:03:36.626
+Managers gain instant visibility without opening separate project management tools.
+
+59
+00:03:36.626 --> 00:03:39.742
+Neural capture remains active during live sessions.
+
+60
+00:03:39.742 --> 00:03:43.221
+Key insights surface while the conversation is still in progress.
+
+61
+00:03:43.221 --> 00:03:47.161
+Participants stay focused on the discussion — not on taking notes.
+
+62
+00:03:47.161 --> 00:03:50.727
+The email workflow distributes meeting summaries automatically.
+
+63
+00:03:50.727 --> 00:03:55.653
+Recipients receive key takeaways, decisions, and action items in a single message.
+
+64
+00:03:55.653 --> 00:03:59.536
+Assignees are notified directly when a new task is assigned to them.
+
+65
+00:03:59.724 --> 00:04:02.986
+Review the generated minutes of meeting document on screen.
+
+66
+00:04:02.943 --> 00:04:08.846
+Sections are organized for quick scanning: summary, decisions, discussion points, and next steps.
+
+67
+00:04:08.846 --> 00:04:12.061
+Export or share the document through your preferred channels.
+
+68
+00:04:12.061 --> 00:04:15.595
+The meeting transcript view provides timestamped speaker labels.
+
+69
+00:04:15.595 --> 00:04:18.887
+Jump to any moment in the conversation with a single click.
+
+70
+00:04:18.887 --> 00:04:23.079
+Search across past meetings to find prior decisions or quoted statements.
+
+71
+00:04:23.079 --> 00:04:25.943
+Feature nine: enterprise data control.
+
+72
+00:04:25.943 --> 00:04:29.279
+Compare MeetingBuddy AI with cloud-only alternatives.
+
+73
+00:04:29.279 --> 00:04:34.677
+You retain full data ownership, optional internet dependency, and offline capability.
+
+74
+00:04:34.677 --> 00:04:39.823
+Enterprise compliance teams gain on-premises deployment without sacrificing AI quality.
+
+75
+00:04:39.823 --> 00:04:42.337
+Feature ten: offline operation.
+
+76
+00:04:42.337 --> 00:04:46.024
+Process meetings anywhere — even without internet connectivity.
+
+77
+00:04:46.024 --> 00:04:49.886
+Core intelligence continues to run on local models and local storage.
+
+78
+00:04:49.886 --> 00:04:52.060
+That completes the feature walkthrough.
+
+79
+00:04:52.060 --> 00:04:59.934
+You have now seen how MeetingBuddy AI captures, understands, structures, and follows up on every meeting — entirely on your infrastructure.
+
+80
+00:05:00.078 --> 00:05:03.990
+Your meetings deserve more than forgotten notes and lost decisions.
+
+81
+00:05:03.951 --> 00:05:08.960
+MeetingBuddy AI — where every conversation becomes clarity, accountability, and action.
+
+82
+00:05:08.960 --> 00:05:10.031
+Privately.
+
+83
+00:05:10.031 --> 00:05:11.264
+Automatically.
+
+84
+00:05:11.264 --> 00:05:12.954
+On your infrastructure.
